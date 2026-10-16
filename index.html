@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IBM Payment Integrity</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.24.0/dist/tabler-icons.min.css" rel="stylesheet">
+<link href="assets/styles.css?v=20261016a" rel="stylesheet">
+</head>
+<body>
+  <div class="banner"><i class="ti ti-alert-triangle"></i><span id="disclaimer">Synthetic data — for demonstration only.</span></div>
+  <div class="topnav">
+    <div style="display:flex;align-items:center">
+      <div class="brand">
+        <svg width="20" height="20" viewBox="0 0 42 42" aria-hidden="true"><circle cx="12" cy="14" r="5" fill="none" stroke="#78a9ff" stroke-width="3"/><circle cx="30" cy="12" r="4" fill="none" stroke="#a6c8ff" stroke-width="3"/><circle cx="24" cy="30" r="6" fill="#0f62fe"/><line x1="16" y1="15" x2="24" y2="28" stroke="#78a9ff" stroke-width="3"/></svg>
+        <span class="brand-name">IBM <b>Payment Integrity</b></span>
+      </div>
+      <div class="navitems">
+        <button class="navitem active" data-area="home">Home</button>
+        <button class="navitem" data-area="casework">Casework <span id="sup-badge" class="tag" style="background:#c77d11;color:#fff;display:none;margin-left:2px">0</span></button>
+        <button class="navitem" data-area="insights">Insights</button>
+        <button class="navitem" data-area="library">Library</button>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <div id="mode-toggle" title="Prepay = pre-payment triage · Retrospective = post-payment review" style="display:flex;background:rgba(255,255,255,0.08);border:0.5px solid rgba(255,255,255,0.2);border-radius:20px;padding:2px">
+        <button class="modebtn" data-mode="prepay"><i class="ti ti-clock-play"></i> Prepay</button>
+        <button class="modebtn active" data-mode="retrospective"><i class="ti ti-history"></i> Retrospective</button>
+      </div>
+      <button id="gsearch" title="Search (/)" style="background:rgba(255,255,255,0.08);border:0.5px solid rgba(255,255,255,0.2);border-radius:7px;color:#dde1e6;cursor:pointer;padding:5px 10px;display:flex;align-items:center;gap:6px;font-size:12px;font-family:inherit"><i class="ti ti-search"></i><span style="color:#c1c7cd">Search</span></button>
+      <button id="reset-demo" title="Reset the demo to its initial data" style="background:rgba(255,255,255,0.08);border:0.5px solid rgba(255,255,255,0.2);border-radius:7px;color:#dde1e6;cursor:pointer;padding:5px 10px;display:flex;align-items:center;gap:6px;font-size:12px;font-family:inherit"><i class="ti ti-refresh"></i><span style="color:#c1c7cd">Reset</span></button>
+      <span class="conn"><span class="d"></span>Snapshot loaded</span>
+      <button id="role-switch" title="Switch role" style="background:rgba(255,255,255,0.08);border:0.5px solid rgba(255,255,255,0.2);border-radius:20px;padding:3px 8px 3px 12px;display:flex;align-items:center;gap:8px;cursor:pointer;color:#fff;font-family:inherit">
+        <div style="text-align:right;line-height:1.15"><div id="role-name" style="font-size:12px;font-weight:500">Dana Whitmore</div><div id="role-title" style="font-size:10px;color:#c1c7cd">Analyst</div></div>
+        <div class="avatar" id="role-avatar">DW</div>
+        <i class="ti ti-switch-horizontal" style="color:#c1c7cd;font-size:14px"></i>
+      </button>
+    </div>
+  </div>
+  <div id="demo-ribbon" style="background:#0a1640;border-bottom:1px solid rgba(255,255,255,0.08);position:fixed;top:0;left:0;right:0;z-index:60;display:none"></div>
+  <div id="subnav" style="background:var(--card);border-bottom:0.5px solid var(--border);display:none"></div>
+  <div id="view"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script src="assets/data.js?v=20261016a"></script>
+  <script src="assets/provider.js?v=20261016a"></script>
+  <script src="assets/collusion.js?v=20261016a"></script>
+  <script src="assets/networks.js?v=20261016a"></script>
+  <script src="assets/export.js?v=20261016a"></script>
+  <script src="assets/ai.js?v=20261016a"></script>
+  <script src="assets/views/home.js?v=20261016a"></script>
+  <script src="assets/views/queue.js?v=20261016a"></script>
+  <script src="assets/views/claim.js?v=20261016a"></script>
+  <script src="assets/views/network.js?v=20261016a"></script>
+  <script src="assets/views/businesses.js?v=20261016a"></script>
+  <script src="assets/views/analytics.js?v=20261016a"></script>
+  <script src="assets/views/provider.js?v=20261016a"></script>
+  <script src="assets/views/investigations.js?v=20261016a"></script>
+  <script src="assets/views/team.js?v=20261016a"></script>
+  <script src="assets/views/heatmap.js?v=20261016a"></script>
+  <script src="assets/views/edi.js?v=20261016a"></script>
+  <script src="assets/views/rules.js?v=20261016a"></script>
+  <script src="assets/views/discovery.js?v=20261016a"></script>
+  <script src="assets/views/models.js?v=20261016a"></script>
+  <script src="assets/views/codelibraries.js?v=20261016a"></script>
+  <script src="assets/views/methodologies.js?v=20261016a"></script>
+  <script src="assets/views/payersetup.js?v=20261016a"></script>
+  <script src="assets/views/member.js?v=20261016a"></script>
+  <script src="assets/views/releases.js?v=20261016a"></script>
+  <script src="assets/views/supervisor.js?v=20261016a"></script>
+  <script src="assets/views/casereviews.js?v=20261016a"></script>
+  <script src="assets/views/audit.js?v=20261016a"></script>
+  <script src="assets/views/portal.js?v=20261016a"></script>
+  <script src="assets/app.js?v=20261016a"></script>
+  <!-- Programs: the use-case list + loader (writes the chosen program's scripts here), then the picker -->
+  <script src="assets/programs.js?v=20261016a"></script>
+  <script src="assets/picker.js?v=20261016a"></script>
+  <script src="assets/config.js?v=20261016a"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/supabase.js?v=20261016a"></script>
+  <script src="assets/search.js?v=20261016a"></script>
+  <script src="assets/copilot-panel.js?v=20261016a"></script>
+  <script src="assets/demo.js?v=20261016a"></script>
+</body>
+</html>

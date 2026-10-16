@@ -1,0 +1,10 @@
+{
+  "name": "payment-integrity-platform",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "IBM Payment Integrity — multi-program demo (synthetic data).",
+  "scripts": {
+    "gen:data": "node scripts/generate-data.mjs"
+  }
+}
